@@ -20,7 +20,7 @@ class CategoryController extends Controller
         $category->publicationStatus = $request->publicationStatus;
         $category->save();
 
-        \Session::flash('message','Data Inseted Successfully');
+        \Session::flash('message','Data Inseted Successfully!!!');
         return redirect()->back();
 
         /*
@@ -31,7 +31,7 @@ class CategoryController extends Controller
         \Session::flash('message','Data Inseted Successfully');
         return redirect()->back();
         */
-        
+
         /*
         Category::create([
             'categoryName'=> $request->name,
