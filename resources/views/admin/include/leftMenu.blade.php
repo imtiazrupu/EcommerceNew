@@ -22,7 +22,7 @@
                                     <a href={{url('/dashboard/category')}}>Category Entry</a>
                                 </li>
                                 <li>
-                                    <a href="morris.html">Morris.js Charts</a>
+                                <a href="{{url('/categoryManage')}}">Category Manage</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->

@@ -42,4 +42,16 @@ class CategoryController extends Controller
         return redirect()->back();
         */
     }
+
+    public function manage()
+    {
+       /* $categories = Category::select(['id','categoryName','shortDescription','publicationStatus'])
+
+        ->orderBy('id','desc')
+        ->get();
+        return view('admin.category.categoryManage', compact('categories'));*/
+
+        $category = Category::all();
+        return view('admin.category.categoryManage',['categories'=>$category]);
+    }
 }
