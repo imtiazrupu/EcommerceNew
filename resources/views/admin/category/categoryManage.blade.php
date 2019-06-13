@@ -1,9 +1,12 @@
 @extends('admin.master')
 @section('pageTitle')
-    Category Manage
+    Admin: Category Manage
 @endsection
 @section('title')
-    Category Manage
+    Category Manage<br>
+    @if(Session::has('message'))
+    <p class="alert alert-success">{{Session::get('message')}}</p>
+    @endif
 @endsection
 @section('mainContent')
 
@@ -26,7 +29,10 @@
                     <td>{{ $category->shortDescription}}</td>
                     <td class="center">{{ ($category->publicationStatus ==1? 'Published':
                     'Unpublished')}}</td>
-                    <td class="center">X</td>
+                    <td>
+                        <!--<a href="{{url('/categoryEdit/'.$category->id)}}" class="btn btn-primary btn-sm">Edit</a> -->
+                        <a href="{{url('/categoryEdit',['id'=>$category->id])}}" class="btn btn-primary btn-sm">Edit</a>
+                        <a href="{{url('/categoryDelete/'.$category->id)}}" class="btn btn-danger btn-sm">Delete</a></td>
                 </tr>
                 @endforeach
             </tbody>

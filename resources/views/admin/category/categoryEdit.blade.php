@@ -1,28 +1,23 @@
 @extends('admin.master')
 @section('pageTitle')
-    Admin: Category Entry
+    Admin: Category Edit
 @endsection
 @section('title')
-    Category Entry<br>
-
-    @if(Session::has('message'))
-    <p class="alert alert-success">{{Session::get('message')}}</p>
-    @endif
-
+    Category Edit
 @endsection
 @section('mainContent')
 <div class="panel-body">
     <div class="row">
         <div class="col-lg-6">
-        <form role="form" action="{{url('categorySave')}}" method="POST">
+        <form role="form" name="editForm" action="{{url('categoryUpdate',['id'=>$category->id])}}" method="POST">
             @csrf
                 <div class="form-group">
                     <label>Category Name</label>
-                    <input class="form-control" name="name">
+                    <input class="form-control" name="name" value="{{$category->categoryName}}">
                 </div>
                 <div class="form-group">
                     <label>Short Description</label>
-                    <textarea class="form-control" rows="3" name="shortDescription" placeholder="Enter Short Description"></textarea>
+                    <textarea class="form-control" rows="3"  name="shortDescription" >{{$category->shortDescription}}</textarea>
                 </div>
                 <div class="form-group">
                     <label>Publication Status</label>
@@ -34,6 +29,9 @@
                 <input type="submit" class="btn btn-primary" value="Submit">
             </form>
         </div>
+        <script>
+        document.forms['editForm'].elements['publicationStatus'].value='{{$category->publicationStatus}}'
+        </script>
         <!-- /.col-lg-6 (nested) -->
         <!-- /.col-lg-6 (nested) -->
     </div>
