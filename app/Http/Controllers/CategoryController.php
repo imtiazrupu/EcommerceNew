@@ -51,7 +51,7 @@ class CategoryController extends Controller
         ->get();
         return view('admin.category.categoryManage', compact('categories'));*/
 
-        $category = Category::all();
+        $category = Category::paginate(10);
         //return view('admin.category.categoryManage',['categories'=>$category]);
         return view('admin.category.categoryManage')->with('categories',$category);
     }
@@ -77,5 +77,11 @@ class CategoryController extends Controller
         \Session::flash('message','Category Updated Successfully !!');
         return redirect('/categoryManage');
 
+    }
+    public function delete($id)
+    {
+        Category::destroy($id);
+        \Session::flash('message','Data Deleted Successfully !!');
+        return redirect()->back();
     }
 }

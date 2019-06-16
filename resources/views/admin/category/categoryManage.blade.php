@@ -21,10 +21,10 @@
                     <th>Action</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody><?php $i = 0; ?>
                 @foreach ($categories as $category)
                 <tr class="odd gradeX">
-                    <td>Trident</td>
+                    <td>{{ ++$i }}</td>
                     <td>{{ $category->categoryName}}</td>
                     <td>{{ $category->shortDescription}}</td>
                     <td class="center">{{ ($category->publicationStatus ==1? 'Published':
@@ -37,5 +37,6 @@
                 @endforeach
             </tbody>
         </table>
+        {{ $categories->links()}}
     </div>
 @endsection

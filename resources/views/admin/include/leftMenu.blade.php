@@ -15,6 +15,8 @@
                         <li>
                             <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
+
+                        <!-- Category -->
                         <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Category Control<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
@@ -27,6 +29,21 @@
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
+
+                        <!--SubCategory-->
+                        <li>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> SubCategory Control<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href={{url('/subCategory/entry')}}>SubCategory Entry</a>
+                                </li>
+                                <li>
+                                <a href="{{url('/subCategory/manage')}}">SubCategory Manage</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+
                         <li>
                             <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
                         </li>
