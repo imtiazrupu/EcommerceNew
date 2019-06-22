@@ -16,4 +16,8 @@ Category Routes
 Route::prefix('subCategory')->group(function(){
     Route::get('/entry','SubCategoryController@index');
     Route::post('/save','SubCategoryController@save');
+    Route::get('/manage','SubCategoryController@manage');
+    Route::get('/view/{id}','SubCategoryController@singleSubCategory');
+    Route::get('/edit/{id}','SubCategoryController@edit');
+    Route::post('/update/{id}','SubCategoryController@update');
 });

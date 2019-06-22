@@ -8,6 +8,6 @@ $factory->define(App\SubCategory::class, function (Faker $faker) {
         'subCategoryName' => $faker->word,
         'shortDescription' => $faker->text,
         'image' => 'img/48383718_2207414212857653_2155451482348978176_o.jpg',
-        'publicationStatus' => $faker->numberBetween(1,2)
+        'publicationStatus' => $faker->numberBetween(0,1)
     ];
 });
