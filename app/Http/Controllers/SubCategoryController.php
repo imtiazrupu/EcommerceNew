@@ -95,4 +95,14 @@ class SubCategoryController extends Controller
         \Session::flash('message','SubCategory Updated Successfully !!');
         return redirect('/subCategory/manage');
     }
+    public function delete($id)
+    {
+        $subCategoryPic = SubCategory::where('id',$id)->first();
+            if(file_exists($subCategoryPic->image)){
+                unlink($subCategoryPic->image);
+            }
+        SubCategory::destroy($id);
+        \Session::flash('message','SubCategory Deleted Successfully');
+        return redirect()->back();
+    }
 }

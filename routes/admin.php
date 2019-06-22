@@ -20,4 +20,5 @@ Route::prefix('subCategory')->group(function(){
     Route::get('/view/{id}','SubCategoryController@singleSubCategory');
     Route::get('/edit/{id}','SubCategoryController@edit');
     Route::post('/update/{id}','SubCategoryController@update');
+    Route::get('/delete/{id}','SubCategoryController@delete');
 });

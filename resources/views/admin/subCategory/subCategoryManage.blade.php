@@ -36,7 +36,8 @@
                     <td>
                         <a href ="{{url('/subCategory/view/'.$subCategory->id)}}" class="btn btn-info btn-sm">View</a>
                         <a href="{{url('/subCategory/edit',['id'=>$subCategory->id])}}" class="btn btn-primary btn-sm">Edit</a>
-                        <a href="{{url('/subCategory/delete/'.$subCategory->id)}}" class="btn btn-danger btn-sm">Delete</a></td>
+                        <a href="{{url('/subCategory/delete/'.$subCategory->id)}}" 
+                        onclick="return confirm('Are you sure you want to delete this item?');" class="btn btn-danger btn-sm">Delete</a></td>
                 </tr>
                 @endforeach
             </tbody>
